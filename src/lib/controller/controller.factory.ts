@@ -46,14 +46,14 @@ function transform(source: ControllerOptions): ControllerOptions {
   target.type = ELEMENT_TYPE;
 
   const location: Location = new NameParser().parse(target);
-  target.name = normalizeFileName(location.name, `camelCase`);
-  target.path = normalizeFileName(location.path, `camelCase`);
+  target.name = normalizeFileName(location.name, source.fileNameCase);
+  target.path = normalizeFileName(location.path, source.fileNameCase);
   target.language =
     target.language !== undefined ? target.language : DEFAULT_LANGUAGE;
 
   target.specFileSuffix = normalizeFileName(
     source.specFileSuffix || 'spec',
-    `camelCase`
+    source.fileNameCase,
   );
 
   target.path = target.flat

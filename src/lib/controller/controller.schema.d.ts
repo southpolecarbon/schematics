@@ -46,4 +46,9 @@ export interface ControllerOptions {
    * Flag to indicate if a directory is created.
    */
   flat?: boolean;
+  /**
+   * File name case to use when generating a file.
+   * Options: "kebabCase" | "pascalCase" | "camelCase"
+   */
+  fileNameCase?: string;
 }
